@@ -1,0 +1,99 @@
+\newcommand{\searchalliance}{ALLIANCE}%
+\newcommand{\searchresult}{No dice.}%
+\newcommand{\searchstory}{You die painfully and alone.}%
+
+
+\pgfmathsetmacro{\cardroundingradius}{2mm}
+\pgfmathsetmacro{\striproundingradius}{1mm}
+\pgfmathsetmacro{\cardwidth}{6}
+\pgfmathsetmacro{\cardheight}{4.6}
+\pgfmathsetmacro{\ruleheight}{0.1}
+\pgfmathsetmacro{\stripheight}{1.1}
+\pgfmathsetmacro{\strippadding}{0.1}
+\newcommand{\searchstripcolor}{black}
+\newcommand{\searchstripfontsize}{}
+\newcommand{\searchcaptionfontsize}{\footnotesize}
+\newcommand{\searchtextfontsize}{}
+
+\newcommand{\searchstriptext}%
+  {\raisebox{-4pt}{\includegraphics[width=0.6cm]{icon-skull}} \hspace{0.25em} \searchalliance}
+\pgfmathsetmacro{\textpadding}{0.2}
+
+
+%%----------------------------------------------------------------------
+%%----------------------------------------------------------------------
+\newcommand{\searchblankcard}{%
+\begin{tikzpicture}%
+
+  \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
+    rectangle (\cardwidth,\cardheight);
+  \node[above left] at (\cardwidth+0.1, -0.1)
+    {\includegraphics[height=4.2cm]{background-skull}};
+  \draw[rounded corners=\cardroundingradius] (0,0) rectangle
+    (\cardwidth,\cardheight);
+
+  %%-- Draw the side strip
+  \fill[\searchstripcolor,rounded corners=\striproundingradius]
+    (\strippadding,\cardheight-\strippadding) rectangle
+    (\cardwidth-\strippadding,\cardheight-\strippadding-\stripheight)
+    node[right=-\cardwidth+\strippadding+\strippadding,yshift=16,white,font=\searchstripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[13pt][5pt]{\vbox to -18pt{}} IGNORE};
+
+    \node[text width=(\cardwidth-\strippadding-\strippadding)*1cm,
+          below right,inner sep=0] at
+          (\strippadding,\cardheight-\stripheight-\strippadding-\strippadding-\textpadding)
+    {\searchtextfontsize%
+      \begin{minipage}{1.0\linewidth}\centering\sc\fontfamily{ptm}\selectfont
+        Throw this\\card away.
+      \end{minipage}
+    };
+
+\end{tikzpicture}
+}
+
+\newcommand{\drawsearchcard}{%
+\begin{tikzpicture}%
+
+  %%-- Draw the card back and outline
+  \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
+    rectangle (\cardwidth,\cardheight);
+  \node[above left] at (\cardwidth+0.1, -0.1)
+    {\includegraphics[height=4.2cm]{background-skull}};
+  \draw[rounded corners=\cardroundingradius] (0,0) rectangle
+    (\cardwidth,\cardheight);
+
+  %%-- Draw the side strip
+  \fill[\searchstripcolor,rounded corners=\striproundingradius]
+    (\strippadding,\cardheight-\strippadding) rectangle
+    (\cardwidth-\strippadding,\cardheight-\strippadding-\stripheight)
+    node[right=-\cardwidth+\strippadding+\strippadding,yshift=16,white,font=\searchstripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[13pt][5pt]{\vbox to -18pt{}} \searchstriptext};
+
+  %%-- Draw the search result info lines
+    \node[text width=(\cardwidth-\strippadding-\strippadding)*1cm,
+          below right,inner sep=0] at
+          (\strippadding,\cardheight-\stripheight-\strippadding-\strippadding-\textpadding)
+    {\searchtextfontsize%
+      \begin{minipage}{1.0\linewidth}\centering\sc\fontfamily{ptm}\selectfont
+        \searchresult
+      \end{minipage}
+    };
+
+    \node[text width=(\cardwidth-\strippadding-\strippadding)*1cm,
+          above right,inner sep=0] at
+          (\strippadding,\strippadding)
+    {\searchcaptionfontsize%
+      \begin{minipage}{1.0\linewidth}\centering\it
+        \searchstory
+      \end{minipage}
+%      \bigskip
+%      \vbox to 72pt{\it\searchstory}
+    };
+
+\end{tikzpicture}
+}
+
+\newcommand{\searchcard}[3]{%
+\renewcommand{\searchalliance}{#1}%
+\renewcommand{\searchresult}{#2}%
+\renewcommand{\searchstory}{#3}%
+\drawsearchcard%
+}
