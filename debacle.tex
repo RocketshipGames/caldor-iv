@@ -184,20 +184,47 @@ Forces of Order, and then the Spoilers, the alliances then alternate
 choosing a pairing and assigning it to a continent.  The opposing
 alliance responds with a table for that match.
 
-For the second and third rounds, pairings are assigned by win/loss
-brackets as best as possible.  Process each unmatched player in order
-by number of wins, then draws if permitted by the missions, and then
-accumulated victory points.  Assign as their opponent the player from
-another alliance in the same win/draw/loss bracket with the next
-highest victory points that they have not already played.  If there
-are no such players, choose the teammate with the next highest victory
-points from the same bracket that they have not already played.  If
-there are none of those, shift the selection to the next bracket down.
+%% (* commander's choice *)
+In the second and third rounds, the alliances choose pairings.
+Alternating in order by total victory points, each alliance puts
+forward a continent and an unmatched player as the attacker.  The
+opposing alliance with the most unmatched players in the attacker's
+win/loss/draw bracket responds with a defending player and a table for
+the match.  If the opposing alliances have an equal number of
+unmatched players in the bracket then one alliance is randomly
+selected to respond.  The defender must be chosen from the alliance's
+unmatched players in the same bracket as the attacker.  If there are
+no such players then the defender must be chosen from the closest
+possible win/loss/draw bracket.  No two players may ever be matched
+more than once.
 
-Once pairings are assigned, in order by total victory points the
-alliances alternate choosing a pairing and assigning it to a
-continent.  The opposing alliance then responds with a table for that
-match.
+%% (* random pairings *)
+% In the second and third rounds, pairings are assigned randomly across
+% the alliances within win/loss brackets as best as possible.  No two
+% players may fight more than once, and opponents must be randomly
+% selected from within the closest possible win/loss brackets permitting
+% that, alternating shifts up and then down the brackets until a match
+% is possible.  Proceeding in order by the alliances' total
+% campaign-wide victory points and descending down the win/loss
+% brackets, the alliances alternate choosing a pairing and assigning it
+% to a continent.  The opposing alliance then responds with a table for
+% that match.
+
+%% (* tournament pairings *)
+% For the second and third rounds, pairings are assigned by win/loss
+% brackets as best as possible.  Process each unmatched player in order
+% by number of wins, then draws if permitted by the missions, and then
+% accumulated victory points.  Assign as their opponent the player from
+% another alliance in the same win/draw/loss bracket with the next
+% highest victory points that they have not already played.  If there
+% are no such players, choose the teammate with the next highest victory
+% points from the same bracket that they have not already played.  If
+% there are none of those, shift the selection to the next bracket down.
+%
+% Once pairings are assigned, in order by total victory points the
+% alliances alternate choosing a pairing and assigning it to a
+% continent.  The opposing alliance then responds with a table for that
+% match.
 
 Each continent may only be assigned a limited number of matches per
 round: The number of players divided by three and rounded up.  Once

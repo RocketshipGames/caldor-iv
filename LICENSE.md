@@ -10,7 +10,7 @@ license](http://creativecommons.org/licenses/by-nc/4.0/).
 
 Exceptions include:
 
- * The title graphic is by [solarseven](http://graphicriver.net/user/solarseven?WT.ac=item_profile_text&WT.z_author=solarseven), available for sale on (Graphic River)[http://graphicriver.net/item/planet-earth/116983).
+ * The title graphic is by [solarseven](http://graphicriver.net/user/solarseven?WT.ac=item_profile_text&WT.z_author=solarseven), available for sale on [Graphic River](http://graphicriver.net/item/planet-earth/116983).
  * The title font is by [Dan Zadorozny](http://www.iconian.com/), available from [Iconian Fonts](http://www.iconian.com/).
 
 Caldor IV is completely unofficial, unauthorized, and unaffiliated
