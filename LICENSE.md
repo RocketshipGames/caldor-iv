@@ -1,12 +1,13 @@
 # Caldor IV License
 
+<div style="float:right">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Caldor IV</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.rocketshipgames.com/games/caldor-iv/" property="cc:attributionName" rel="cc:attributionURL">Rocketship Games</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+</div>
 Unless noted otherwise, all text and photos are by [Joe
 Kopena](http://rocketshipgames.com/blogs/tjkopena/).  They are
 released under a [Creative Commons Attribution-NonCommercial 4.0
 International
 license](http://creativecommons.org/licenses/by-nc/4.0/).
-
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Caldor IV</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.rocketshipgames.com/games/caldor-iv/" property="cc:attributionName" rel="cc:attributionURL">Rocketship Games</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 Exceptions include:
 
