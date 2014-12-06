@@ -2,8 +2,19 @@
 
 \usepackage{pdflscape}
 
-\input{legacycard}
+%%-- For cards
+\pgfmathsetmacro{\cardroundingradius}{2mm}
+\pgfmathsetmacro{\striproundingradius}{1mm}
+\pgfmathsetmacro{\ruleheight}{0.1}
+\pgfmathsetmacro{\stripheight}{1.1}
+\pgfmathsetmacro{\strippadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.3}
+\newcommand{\stripcolor}{black}
+%%-------
 
+\input{legacycard}
+\input{searchcard}
+\input{covertcard}
 
 \begin{document}
 
@@ -81,7 +92,7 @@ Mission Achieved:
 
 \begin{landscape}%
 \vspace*{-15pt}%
-\noindent\legacy{EXPLORATORS}%
+\noindent\legacycard{EXPLORATORS}%
 {Priceless relics and archeotech litter the field of war, glittering
   in the wasteland.  You must secure the area and begin recovery
   operations, but clearly others have similar plans...}%
@@ -94,7 +105,7 @@ Mission Achieved:
 %%
 \hfill%
 %%
-\legacy{Mushi}%
+\legacycard{Mushi}%
 {Nonsensee}%
 {Excavation}%
 {Defender}%
