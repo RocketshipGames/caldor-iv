@@ -7,8 +7,8 @@
 \newcommand{\legacygoal}{CRUSH FACE.}%
 \newcommand{\legacybonus}{Hit yourself.}%
 
-\pgfmathsetmacro{\legacycardwidth}{12.45}
-\pgfmathsetmacro{\legacycardheight}{19}
+\pgfmathsetmacro{\legacycardwidth}{9.25}
+\pgfmathsetmacro{\legacycardheight}{12.45}
 
 \newcommand{\legacystripfontsize}{\huge}
 \newcommand{\legacycaptionfontsize}{\LARGE}
@@ -21,19 +21,17 @@
 %%----------------------------------------------------------------------
 %%----------------------------------------------------------------------
 \newcommand{\resultstable}{%
-\begin{minipage}{4.25in}%
-\smallskip\centering\legacytextfontsize%
-\fbox{\begin{tabular}{|C{1.25in}C{1in}cc|}
-  \hline
-  {\bf Mission} & {\bf Role} & {\bf Victory} & {\bf Defeat}\\
-  \hline
-  \hline
-  \legacymissiona & \legacyrolea & \ding{111} & \ding{111}\\
-  \legacymissionb & \legacyroleb & \ding{111} & \ding{111}\\
-  \underline{\hspace{1.25in}} &  \underline{\hspace{1in}} & \ding{111} & \ding{111}\\
-  \underline{\hspace{1.25in}} &  \underline{\hspace{1in}} & \ding{111} & \ding{111}\\
-  \hline
-\end{tabular}}%
+\begin{minipage}{\linewidth}%
+%\smallskip\centering\legacytextfontsize%
+{\bf Campaign Missions:}
+\begin{tabular}{C{1.25in}C{1in}c}
+  %{\bf Mission} & {\bf Role}&\\% & {\bf Victory}\\
+  %\hline
+  \legacymissiona & \legacyrolea & \ding{111}\\
+  \legacymissionb & \legacyroleb & \ding{111}\\
+%  \underline{\hspace{1.25in}} &  \underline{\hspace{1in}} & \ding{111}\\
+%  \underline{\hspace{1.25in}} &  \underline{\hspace{1in}} & \ding{111}\\
+\end{tabular}%
 \end{minipage}%
 }
 
@@ -42,6 +40,8 @@
 %%----------------------------------------------------------------------
 \newcommand{\drawlegacycard}{%
 \begin{tikzpicture}%
+  \clip (-0.05, -0.05) rectangle (\legacycardwidth+.05, \legacycardheight+.05);
+
   %%-- Draw the card back and outline
   \draw[rounded corners=\cardroundingradius,fill=white,draw=none] (0,0)
     rectangle (\legacycardwidth,\legacycardheight);
@@ -54,21 +54,14 @@
   \fill[\stripcolor,rounded corners=\striproundingradius]
     (\strippadding,\strippadding) rectangle
     (\strippadding+\stripwidth,\legacycardheight-\strippadding)
-    node[rotate=90,above left,white,font=\legacystripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[13pt][5pt]{\vbox to -18pt{}} \legacystriptext};
+    node[rotate=90,above left,white,font=\legacystripfontsize\fontfamily{ptm}\selectfont] {\raisebox{0pt}[15pt][3pt]{\vbox to -18pt{}} \legacystriptext};
 
   %%-- Draw the player info lines
     \node[text width=(\legacycardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
           below right,inner sep=0] at
           (\strippadding+\stripwidth+\textpadding,\legacycardheight-\textpadding)
     {\legacytextfontsize%
-      \begin{tabular}{@{}ll}
-        \textbf{Name:} &  \underline{\hspace{8.25cm}}\\
-        \textbf{Squad:} &  \underline{\hspace{8.25cm}}\\
-        \textbf{Faction:} & \underline{\hspace{8.25cm}}\\
-      \end{tabular}
-
-      \bigskip
-      \vbox to 72pt{\it\legacystory}
+      \vbox to 36pt{\it\legacystory}
 
 
       \smallskip
@@ -84,6 +77,17 @@
       {\bf Campaign Bonus:} \legacybonus
     };
 
+    \node[text width=(\legacycardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
+          above right,inner sep=0] at
+          (\strippadding+\stripwidth+\textpadding,\strippadding)
+    {\legacytextfontsize%
+      \begin{tabular}{@{}ll}
+        \textbf{Name:} &  \underline{\vbox to 18pt{}\hspace{2.125in}}\\
+        %\textbf{Squad:} &  \underline{\vbox to 18pt{}\hspace{8.25cm}}\\
+        %\textbf{Faction:} & \underline{\vbox to 18pt{}\hspace{8.25cm}}\\
+        %\textbf{Alliance:} & \underline{\vbox to 18pt{}\hspace{8.25cm}}\\
+      \end{tabular}
+    };
 \end{tikzpicture}
 }
 
