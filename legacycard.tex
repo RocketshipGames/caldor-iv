@@ -4,6 +4,8 @@
 \newcommand{\legacyrolea}{Either}%
 \newcommand{\legacymissionb}{Any}%
 \newcommand{\legacyroleb}{Either}%
+\newcommand{\legacymissionc}{Any}%
+\newcommand{\legacyrolec}{Either}%
 \newcommand{\legacygoal}{CRUSH FACE.}%
 \newcommand{\legacybonus}{Hit yourself.}%
 
@@ -15,7 +17,7 @@
 \newcommand{\legacytextfontsize}{\large}
 
 \newcommand{\legacystriptext}%
-  {\legacytitle\hspace{0.5em}\rotatebox[origin=c]{-90}{\includegraphics[width=0.6cm]{icon-skull}}}
+  {LEGACY: \legacytitle\hspace{0.5em}\rotatebox[origin=c]{-90}{\includegraphics[width=0.6cm]{icon-skull}}}
 
 
 %%----------------------------------------------------------------------
@@ -23,14 +25,14 @@
 \newcommand{\resultstable}{%
 \noindent\begin{minipage}{\linewidth}%
 %\smallskip\centering\legacytextfontsize%
-{\bf Campaign Missions:}\\
+{\bf Twilight Missions:}\\
 \centerline{\begin{tabular}{@{}C{1.3in}C{1in}c@{}}
   %{\bf Mission} & {\bf Role}&\\% & {\bf Victory}\\
   %\hline
   \legacymissiona & \legacyrolea & \ding{111}\\
   \legacymissionb & \legacyroleb & \ding{111}\\
-  \underline{\hspace{1.25in}} &  \underline{\hspace{0.8in}} & \ding{111}\\
-  \underline{\hspace{1.25in}} &  \underline{\hspace{0.8in}} & \ding{111}\\
+  \legacymissionc & \legacyrolec & \ding{111}\\
+  %\underline{\hspace{1.25in}} &  \underline{\hspace{0.8in}} & \ding{111}\\
 \end{tabular}}%
 \end{minipage}%
 }
@@ -75,10 +77,10 @@
       %\centerline{\Large\sc\fontfamily{ptm}\selectfont --- Cataclysm ---}
 
       \bigskip
-      {\bf Cataclysm Mission:} \legacygoal
+      {\bf Cataclysm Objective:} \legacygoal
 
       \bigskip
-      {\bf Campaign Bonus:} \legacybonus
+      {\bf Legacy Bonus:} \legacybonus
     };
 
     \node[text width=(\legacycardwidth-\strippadding-\stripwidth-2*\textpadding)*1cm,
@@ -95,14 +97,21 @@
 \end{tikzpicture}
 }
 
-\newcommand{\legacycard}[8]{%
+
+\newcommand{\legacycard}[9]{%
 \renewcommand{\legacytitle}{#1}%
 \renewcommand{\legacystory}{#2}%
 \renewcommand{\legacymissiona}{#3}%
 \renewcommand{\legacyrolea}{#4}%
 \renewcommand{\legacymissionb}{#5}%
 \renewcommand{\legacyroleb}{#6}%
-\renewcommand{\legacygoal}{#7}%
-\renewcommand{\legacybonus}{#8}%
+\renewcommand{\legacymissionc}{#7}%
+\renewcommand{\legacyrolec}{#8}%
+\renewcommand{\legacygoal}{#9}%
+\legacycardb%
+}
+
+\newcommand{\legacycardb}[1]{%
+\renewcommand{\legacybonus}{#1}%
 \drawlegacycard%
 }
