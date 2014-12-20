@@ -3,6 +3,20 @@
 \clearpage
 \pagetitle{The Twilight: Mission Pack}
 
+
+All of the missions are played on a~4'x4' table.
+
+The variable game length rule is used in all missions unless noted otherwise.
+
+A major victory is worth 10 points to the winner and 0 to the loser.
+Victory is 7 and 3
+Draw is 5 and 5
+
+Plus the two bonus points.
+
+Better victories trump others, e.g., meeting the conditions for a
+major victory trumps the conditions for a minor victory.
+
 Missions to be specified in more detail...
 
 \missionheading{Ambush}
@@ -54,12 +68,71 @@ hold that objective.  Otherwise the attacker wins.
 
 The basic mission from the Recon Squad packet: Vanguard and three objectives.
 
+\newlength{\missionheight}
+\setlength{\missionheight}{(\textheight-18pt)/2}
+\newcommand{\miwrap}[1]{\noindent\fbox{\vbox to \missionheight{\input{missions/#1}\vfill\vbox to 0pt{}}}}
 
-\input{missions/ambush}
-\input{missions/assassination}
-\input{missions/battlefield}
-\input{missions/breakthrough}
-\input{missions/encirclement}
-\input{missions/excavation}
-\input{missions/installation}
-\input{missions/skirmish}
+\newcommand{\mispace}{%
+\vfill
+%\hrule
+%\vspace*{3pt}
+%\hrule
+%\vfill
+}
+
+\newcommand{\mipre}{%
+\clearpage
+}
+
+\newcommand{\mipost}{%
+}
+
+\newcommand{\mipair}[2]{%
+\mipre%
+\miwrap{#1}%
+\mispace%
+\miwrap{#2}%
+\mipost
+}
+
+\newcommand{\scoringbox}[5]{%
+\vfill%
+\vspace{9pt}%
+\noindent\vbox{%
+\noindent\vbox to -4pt{\noindent\hfill\Large\bf\sc\fontfamily{ptm}\selectfont Scoring\vbox{}}\\
+%
+{\fbox{\vbox{\small%
+\setlength{\tabcolsep}{2pt}%
+\noindent\begin{tabularx}{\linewidth}{cccX}
+  \hbox to 1.25em{\rotatebox{45}{\small\bf Attacker}}&
+  \hbox to 1.25em{\rotatebox{45}{\small\bf Defender}}&
+  &
+  \multicolumn{1}{c}{\footnotesize\bf Condition}
+\\
+  \hline
+%
+  \rescheck&\rescheck& & {\bf Major Victory:} #1\\
+%
+  \rescheck&\rescheck& &
+  {\bf Minor Victory:} #2\\
+%
+\rescheck&\rescheck& &
+{\bf Draw:} #3\\
+\hline \rescheck&\rescheck& &
+{\bf Bonus Point:} #4\\
+\rescheck&\rescheck& &
+{\bf Bonus Point:} #5\\
+\end{tabularx}%
+}}}}%
+}
+
+\clearpage
+\squelchbackground
+
+%\mipair{ambush}{assassination}
+\mipair{battlefield}{breakthrough}
+\mipair{encirclement}{excavation}
+\mipair{installation}{skirmish}%
+
+\clearpage
+\restorebackground
